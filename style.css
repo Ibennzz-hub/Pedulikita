@@ -114,7 +114,7 @@ button{cursor:pointer}
 .panel select{min-height:44px}
 
 /* ===== Redesign premium ===== */
-@font-face{font-family:"Plus Jakarta Sans";src:url("fonts/plus-jakarta-sans.woff2") format("woff2");font-weight:200 800;font-display:swap}
+@font-face{font-family:"Plus Jakarta Sans";src:url("plus-jakarta-sans.woff2") format("woff2"),url("fonts/plus-jakarta-sans.woff2") format("woff2");font-weight:200 800;font-display:swap}
 :root{--navy:#102A43;--teal:#167D78;--gold:#E8B86D;--slate:#344054;--bg:#F7F8FA;--or:#167D78;--line:#E4E7EC;--muted:#475467;--r:20px;--sh:0 1px 2px rgba(16,42,67,.06),0 8px 24px rgba(16,42,67,.06)}
 body{font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--navy)}
 h1,h2,h3{letter-spacing:-.02em}
@@ -193,3 +193,44 @@ h2{font-size:1.7rem}
   #confirm .receipt{position:absolute;left:0;top:0;width:100%;max-width:none;border:0;box-shadow:none}
   .no-print{display:none!important}
 }
+
+/* ===== Galeri, editor, lightbox ===== */
+.ph{background:linear-gradient(135deg,#E3F4F2,#F7F8FA)}
+.zoom{cursor:zoom-in}
+.crumb{display:flex;flex-wrap:wrap;align-items:center;gap:.25rem;font-size:.9rem;color:var(--muted);margin-bottom:.75rem}
+.crumb button{border:0;background:none;padding:.5rem .25rem;min-height:44px;color:var(--teal);font-weight:600}
+.gal{display:flex;gap:.5rem;overflow-x:auto;margin:-.5rem 0 1rem;padding-bottom:.25rem}
+.gal-i{flex:0 0 96px;aspect-ratio:16/9;padding:0;border:2px solid transparent;border-radius:12px;overflow:hidden;background:var(--bg)}
+.gal-i:hover{border-color:var(--teal)}
+.gal-i img{display:block;width:100%;height:100%;object-fit:cover}
+.story p,.story li{font-size:1.05rem;line-height:1.8;max-width:65ch}
+.story h3{margin-top:1.5rem}
+.story ul{padding-left:1.25rem;margin:0 0 .75rem}
+.modal-box.lb{max-width:min(960px,100%)}
+.lb-img{display:block;width:100%;max-height:70vh;object-fit:contain;border-radius:12px;background:var(--bg);margin-top:1.5rem}
+.lb-img+.row{margin-top:.75rem;align-items:center}
+.btn.sm{min-height:44px;padding:.3rem .8rem;font-size:.85rem}
+.drop{position:relative;display:flex;flex-direction:column;gap:.25rem;align-items:center;text-align:center;padding:1.5rem;margin:.5rem 0 1rem;border:2px dashed var(--line);border-radius:var(--r);background:var(--bg)}
+.drop.over,.drop:focus-within{border-color:var(--teal);background:#E3F4F2}
+.drop input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+.gedit{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.gi{display:flex;flex-direction:column;gap:.5rem}
+.gb{display:flex;flex-wrap:wrap;gap:.35rem}
+@media (min-width:768px){.detail-grid>:last-child{position:sticky;top:5rem;align-self:start}}
+
+/* ===== Tahap 2 ===== */
+.bar-fill{transition:width .9s ease}
+.fig{margin:1.25rem 0}
+.fig img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--r)}
+.fig figcaption{font-size:.9rem;margin-top:.4rem}
+.tl .item{position:relative;border-bottom:0;border-left:3px solid var(--teal);padding-left:1.25rem;margin-left:.5rem}
+.tl .item::before{content:"";position:absolute;left:-9px;top:1rem;width:15px;height:15px;border-radius:50%;background:var(--gold);border:3px solid #fff}
+.rel-grid{display:grid;gap:1rem}
+.rel-i{display:flex;flex-direction:column;gap:.35rem;text-align:left;padding:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;padding-bottom:.75rem}
+.rel-i b,.rel-i span{padding:0 .85rem}
+.qi{width:100%;min-height:44px;padding:.6rem 1rem;border:1px solid var(--line);border-radius:999px;margin:.5rem 0 .75rem}
+.posr{display:flex;flex-direction:column;font-size:.85rem;font-weight:600;min-width:150px}
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:15;padding:.75rem 1rem;background:#fff;border-top:1px solid var(--line)}
+#detail{padding-bottom:5.5rem}
+@media (min-width:768px){.rel-grid{grid-template-columns:repeat(3,1fr)}.sticky-cta{display:none}#detail{padding-bottom:2rem}}
+@media (prefers-reduced-motion:reduce){.bar-fill{transition:none}}
