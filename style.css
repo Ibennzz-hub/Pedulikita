@@ -1,0 +1,98 @@
+:root{--w:#FFFFFF;--navy:#183B56;--or:#F4A261;--bg:#F5F8FA;--line:#DCE4EA;--muted:#5B7083;--ok:#1E7B4F;--bad:#B3261E;--r:16px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--navy);background:var(--w);overflow-x:hidden}
+h1,h2,h3{line-height:1.2;margin:0 0 .5rem}
+h1{font-size:1.9rem}h2{font-size:1.5rem}h3{font-size:1.15rem}
+p{margin:0 0 .75rem}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--or);outline-offset:2px}
+.wrap{width:100%;max-width:1100px;margin:0 auto;padding:0 1rem}
+.sec{padding-top:2rem;padding-bottom:2rem}
+.muted{color:var(--muted)}
+.sr,.skip{position:absolute;left:-9999px}
+.skip:focus{left:1rem;top:1rem;background:var(--w);padding:.5rem 1rem;border-radius:8px;z-index:100}
+[hidden]{display:none!important}
+
+.top{position:sticky;top:0;z-index:20;background:var(--w);border-bottom:1px solid var(--line)}
+.top-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;min-height:60px}
+.brand{display:flex;align-items:center;gap:.5rem;border:0;background:none;font-weight:800;font-size:1.25rem;min-height:44px}
+.logo{display:grid;place-items:center;width:32px;height:32px;border-radius:10px;background:var(--or);color:var(--navy)}
+.menu-btn{border:1px solid var(--line);background:var(--w);border-radius:12px;min-width:44px;min-height:44px;font-size:1.2rem}
+.nav{display:none;width:100%;flex-direction:column;padding-bottom:.75rem}
+.nav.open{display:flex}
+.nav button{border:0;background:none;text-align:left;padding:.75rem;border-radius:12px;min-height:44px;font-weight:600}
+.nav button.on,.nav button:hover{background:var(--bg)}
+
+.hero{background:var(--navy);color:var(--w)}
+.hero-in{padding-top:2.5rem;padding-bottom:2.5rem}
+.hero p{max-width:60ch;color:#D6E2EB}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.75rem;margin:1.25rem 0}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;min-height:44px;padding:.6rem 1.25rem;border:2px solid var(--or);background:var(--or);color:var(--navy);border-radius:999px;font-weight:700}
+.btn:hover{filter:brightness(.95)}
+.btn.navy{background:var(--navy);border-color:var(--navy);color:var(--w)}
+.btn.ghost{background:var(--w);border-color:var(--navy);color:var(--navy)}
+.btn.ghost-light{background:transparent;border-color:var(--w);color:var(--w)}
+.btn.full{width:100%}
+
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1rem}
+.stat{background:rgba(255,255,255,.1);border-radius:var(--r);padding:.9rem}
+.stats.dark .stat{background:var(--bg)}
+.stat b{display:block;font-size:1.25rem}
+.stat span{font-size:.875rem;opacity:.85}
+
+.tools{display:flex;flex-direction:column;gap:.75rem;margin:1rem 0}
+.search input{width:100%;min-height:44px;padding:.6rem 1rem;border:1px solid var(--line);border-radius:999px}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{min-height:44px;padding:.4rem 1rem;border:1px solid var(--line);background:var(--w);border-radius:999px;font-weight:600}
+.chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--w)}
+
+.grid{display:grid;grid-template-columns:1fr;gap:1rem}
+.card{display:flex;flex-direction:column;gap:.5rem;padding:1.1rem;border:1px solid var(--line);border-radius:var(--r);background:var(--w)}
+.card .ico{font-size:2rem}
+.badge{align-self:flex-start;padding:.1rem .7rem;border-radius:999px;background:var(--bg);font-size:.8rem;font-weight:700}
+.bar{height:10px;border-radius:999px;background:var(--line);overflow:hidden}
+.bar-fill{height:100%;background:var(--or);border-radius:999px}
+.row{display:flex;justify-content:space-between;gap:.5rem;font-size:.9rem;flex-wrap:wrap}
+.panel{border:1px solid var(--line);border-radius:var(--r);padding:1.1rem;margin:1rem 0;background:var(--w)}
+.item{padding:.75rem 0;border-bottom:1px solid var(--line)}
+.item:last-child{border-bottom:0}
+.empty{padding:1.5rem;text-align:center;border:2px dashed var(--line);border-radius:var(--r)}
+
+.detail-grid{display:grid;gap:1.5rem}
+.amounts{display:flex;flex-wrap:wrap;gap:.5rem;margin:.5rem 0}
+.form-grid{display:grid;gap:.9rem}
+.field label{display:block;font-weight:600;margin-bottom:.25rem}
+.field input,.field textarea,.field select{width:100%;min-height:44px;padding:.6rem .9rem;border:1px solid var(--line);border-radius:12px;background:var(--w)}
+.check{display:flex;align-items:center;gap:.6rem;min-height:44px}
+.check input{width:22px;height:22px}
+.err{color:var(--bad);font-size:.85rem;min-height:1.1em;margin:.2rem 0 0}
+
+.modal{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:1rem;background:rgba(24,59,86,.6)}
+.modal-box{position:relative;width:100%;max-width:460px;max-height:90vh;overflow:auto;background:var(--w);border-radius:20px;padding:1.5rem}
+.x{position:absolute;top:.6rem;right:.6rem;width:44px;height:44px;border:0;background:var(--bg);border-radius:50%}
+.pay{display:grid;gap:.5rem;margin:.75rem 0}
+.pay button{min-height:44px;text-align:left;padding:.6rem 1rem;border:2px solid var(--line);background:var(--w);border-radius:12px;font-weight:600}
+.pay button[aria-pressed="true"]{border-color:var(--or);background:#FEF3E8}
+.toasts{position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:60;display:grid;gap:.5rem;justify-items:center;pointer-events:none}
+.toast{background:var(--navy);color:var(--w);padding:.75rem 1.25rem;border-radius:12px;border-left:6px solid var(--or);max-width:420px}
+.toast.bad{border-left-color:var(--bad)}
+.foot{background:var(--bg);padding:1.5rem 0;margin-top:2rem;font-size:.9rem;color:var(--muted)}
+
+@media (min-width:768px){
+  h1{font-size:2.6rem}
+  .menu-btn{display:none}
+  .nav{display:flex;flex-direction:row;width:auto;padding:0;gap:.25rem}
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .tools{flex-direction:row;align-items:center;justify-content:space-between}
+  .search{flex:0 1 320px}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .detail-grid{grid-template-columns:1.3fr 1fr}
+  .form-grid{grid-template-columns:1fr 1fr}
+  .form-grid .btn{grid-column:1/-1}
+  .toasts{left:auto;right:1.5rem;justify-items:end}
+}
+@media (min-width:1024px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
