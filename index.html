@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="description" content="PeduliKita: platform donasi online untuk korban bencana dan masyarakat yang membutuhkan.">
+<title>PeduliKita - Donasi Online Terpercaya</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Lewati ke konten</a>
+
+<header class="top">
+  <div class="wrap top-row">
+    <button class="brand" data-go="home" aria-label="PeduliKita, ke beranda"><span class="logo" aria-hidden="true">♥</span>PeduliKita</button>
+    <button id="menu-btn" class="menu-btn" aria-label="Buka menu" aria-expanded="false" aria-controls="nav">☰</button>
+    <nav id="nav" class="nav" aria-label="Navigasi utama">
+      <button data-go="home">Beranda</button>
+      <button data-go="kampanye">Kampanye</button>
+      <button data-go="transparansi">Transparansi</button>
+      <button data-go="history">Riwayat Donasi</button>
+      <button data-go="admin">Admin</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section id="v-home" class="view">
+    <div class="hero">
+      <div class="wrap hero-in">
+        <h1>Satu donasi kecil, harapan besar bagi mereka yang terdampak.</h1>
+        <p>Salurkan bantuan untuk korban bencana, pendidikan, kesehatan, dan sesama yang membutuhkan. Setiap rupiah tercatat dan bisa dipantau.</p>
+        <div class="hero-cta">
+          <button class="btn" data-go="kampanye">Mulai berdonasi</button>
+          <button class="btn ghost-light" data-go="transparansi">Lihat laporan dana</button>
+        </div>
+        <div id="hero-stats" class="stats"></div>
+      </div>
+    </div>
+
+    <section id="kampanye" class="wrap sec">
+      <h2>Kampanye donasi</h2>
+      <div class="tools">
+        <label class="search"><span class="sr">Cari kampanye</span><input id="q" type="search" maxlength="60" placeholder="Cari kampanye atau lokasi"></label>
+        <div id="cats" class="chips" role="group" aria-label="Filter kategori"></div>
+      </div>
+      <div id="grid" class="grid"></div>
+    </section>
+
+    <section id="transparansi" class="wrap sec">
+      <h2>Transparansi penggunaan dana</h2>
+      <p class="muted">Dana yang terkumpul dan yang sudah disalurkan untuk setiap kampanye.</p>
+      <div id="transp" class="panel"></div>
+    </section>
+  </section>
+
+  <section id="v-detail" class="view" hidden><div class="wrap sec" id="detail"></div></section>
+
+  <section id="v-history" class="view" hidden>
+    <div class="wrap sec"><h2>Riwayat donasi</h2><div id="hist"></div></div>
+  </section>
+
+  <section id="v-confirm" class="view" hidden><div class="wrap sec" id="confirm"></div></section>
+
+  <section id="v-admin" class="view" hidden><div class="wrap sec" id="admin"></div></section>
+</main>
+
+<footer class="foot"><div class="wrap">PeduliKita &copy; 2026. Platform simulasi donasi, tidak memproses pembayaran sungguhan.</div></footer>
+
+<div id="modal" class="modal" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button id="modal-x" class="x" type="button" aria-label="Tutup">✕</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+<div id="toasts" class="toasts" aria-live="polite"></div>
+
+<script src="app.js" defer></script>
+</body>
+</html>
